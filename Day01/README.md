@@ -90,8 +90,10 @@ Port forwarding: docker run --rm -d --name app1 -p 8000:80 nginx:latest
 View logs: docker logs app1 -f
 
 REFLECTION QUESTIONS:
-edit .bashrc file so that one doesn't have to type big command to stop all containers -> 
+edit .bashrc file so that one doesn't have to type big command to stop all containers 
+
 alias dstop='docker stop $(docker ps -aq)'
+
 alias dremove='docker rm $(docker ps -aq)'
 
    
