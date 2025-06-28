@@ -107,3 +107,10 @@ Containers are stateless by nature, meaning if a container is deleted, all data 
 ## Conclusion
 
 By understanding and using volumes and bind mounts, you can ensure data persistence in your Docker containers. This guide provides a solid foundation to start working with Docker and manage data effectively. Happy Dockerizing!
+
+## My notes
+
+**Docker Volume**
+In Docker, a volume is a persistent storage mechanism used to store data outside of a container’s writable layer. This allows data to persist across container restarts and removals, and to share data between containers.
+
+
