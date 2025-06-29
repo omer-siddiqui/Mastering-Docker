@@ -26,6 +26,8 @@ Paste Like below
 
 ![image](https://github.com/saikiranpi/Mastering-Docker/assets/109568252/1ad08bf8-593e-4579-921c-0f7d8938c8ee)
 
+Change the service directory file, so that dokcer knows that from now on the directory to be used is the new one you just created
+( the steps are written on the document of day 2 folder in separate file )
 # Why We Need a Custom Network for Containers
 
 With the default bridge network, containers can communicate with each other using IP addresses but not with container names. To enable communication using container names, we need to create a custom network.
