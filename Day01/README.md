@@ -1,6 +1,9 @@
 Difference b/w VM and containers
+
 ![image](https://github.com/user-attachments/assets/00abeb81-e1fa-4aba-8bef-c2bc09e01ca9)
+
 ![image](https://github.com/user-attachments/assets/e01d9d35-650e-4465-b2a2-c622d4dd9c4b)
+
 Hardware Components:
 CPU: Central Processing Unit, the brain of the computer.
 RAM: Random Access Memory, temporary storage for data being used.
