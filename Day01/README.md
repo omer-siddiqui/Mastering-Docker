@@ -101,8 +101,12 @@ alias dstop='docker stop $(docker ps -aq)'
 alias dremove='docker rm $(docker ps -aq)'
 
 to get the name of docker
+
 docker inspect --format {{ .Name }} $(docker ps -q)
 
 to get ip address of docker
+
 docker inspect --format '{{ .NetworkSettings.IPAddress }}' $(docker ps -q)
+
+
    
