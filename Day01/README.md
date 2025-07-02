@@ -1,3 +1,11 @@
+Difference b/w VM and containers
+[ Host Machine ]
+  ├── Hypervisor
+      ├── VM 1 (Ubuntu)
+      ├── VM 2 (Windows)
+[ Host OS Kernel ]
+  ├── Container 1 (App A + dependencies)
+  ├── Container 2 (App B + dependencies)
 
 
 Hardware Components:
