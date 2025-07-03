@@ -68,6 +68,10 @@ You can access the Node Exporter from the host's public IP on port 9100. To insp
 
 docker image inspect prom/node-exporter:latest
 
+REFLECTION QUESTIONS
+
+*using the host network we can use nginx on public ip with out port forwarding*
+*docker run --name test -d --network host nginx*
 # Using the NONE Network Mode
 
 The NONE network mode means the container has no network interfaces enabled except for a loopback device. This is useful for highly isolated containers that do not require any network access.
