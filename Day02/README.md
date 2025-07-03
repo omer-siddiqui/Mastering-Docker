@@ -1,5 +1,7 @@
 ![02](https://github.com/saikiranpi/Mastering-Docker/assets/109568252/7d18cf0c-2c71-4d4a-bff9-aed6fab5d8d7)
 
+docker data stored in /var/lib/data/containers
+
 # Why We Need Separate Utilization for Docker Data
 The default directory for Docker is /var/lib/docker. As you continue downloading images and generating logs, this directory will consume more space and eventually get busy. To prevent this, we can store all our Docker data in a separate directory.
 
