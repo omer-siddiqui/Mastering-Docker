@@ -40,6 +40,64 @@ RUN wget https://releases.hashicorp.com/terraform/${T_VERSION}/terraform_${T_VER
 
 CMD ["nginx", "-g", "daemon off;"]
 
+# Reflection Questions
+my version of Docker file
+
+FROM ubuntu
+
+LABEL name="omer"
+
+ENV ACCESS_KEY='fdfdfdsfdf' \
+    SECRET_KEY='ererwedfdsfdee' \
+    DEFAULT_REGION='xvxcvxcdsfdee'
+
+ARG T_VERSION='1.6.6' \
+    P_VERSION='1.8.0'
+
+RUN apt update && apt install -y \
+    jq \
+    net-tools \
+    curl \
+    wget \
+    unzip \
+    nginx \
+    iputils-ping
+
+# download link of latest version of terraform & packer
+# https://releases.hashicorp.com/terraform/1.12.2/terraform_1.12.2_linux_amd64.zip
+# https://releases.hashicorp.com/packer/1.13.1/packer_1.13.1_linux_amd64.zip
+
+RUN wget https://releases.hashicorp.com/terraform/${T_VERSION}/terraform_${T_VERSION}_linux_amd64.zip  && \
+    wget https://releases.hashicorp.com/packer/${P_VERSION}/packer_${P_VERSION}_linux_amd64.zip && \
+    unzip terraform_${T_VERSION}_linux_amd64.zip && \
+    unzip packer_${P_VERSION}_linux_amd64.zip  && \
+    chmod 777 terraform && \
+    chmod 777 packer && \
+    ./terraform version && \
+    ./packer version
+
+CMD [ "nginx", "-g", "daemon off;" ]
+
+NOW WHAT YOU NEED TO DO IN REVISION IS TO BUILD THIS FILE LINE BY LINE SO THAT YOU UNDERSTAND HOW IT BUILDJ
+
+docker build -t test:0 .
+
+THE MAIN CONCEPT TO LEARN HERE IS ABOUT ENV AND ARG VARIABLES AND THEIR USAGE
+
+SEE ONCE YOU BUILD IT -> YOU NOTICED THAT ARG VARIABLES ARE USED INSIDE THE BUILD AND WHEN YOU TRY TO ACCESS IT AFTER THE BUILD USING
+
+echo  $T_VERSIOIN AND echo $P_VERSION -> THEY RETURN BLANK
+
+RATHER YOU NOTICED THAT ENV VARIABLES WERE NOT USED DURING THE BUILD BUT THEY ARE AVAILABLE TO YOU DURING RUN
+
+docker exec -it test bash  -> once inside the container, you get the values of ENV variables
+
+echo  $ACCESS_KEY AND echo $SECRET_KEY -> THEY RETURN VALUES SET INSIDE DOCKER FILE
+
+TO PASS BUILD ARGUMENTS DURING BUILD -> docker build --build-arg T_VERSION=1.4.0 --build-arg P_VERSION=1.5.0 -t your_image_name:v .
+
+TO PASS ENV ARGUMENTS DURING RUN -> docker run -e ACCESS_KEY=your_access_key -e SECRET_KEY=your_secret_key -e DEFAULT_REGION=your_region your_image_name:v 
+
 
 ## Docker Commands
 
