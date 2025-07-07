@@ -15,6 +15,25 @@ Docker Compose is a tool that allows you to define and manage multi-container Do
 - Basic understanding of Docker concepts
 - Docker Compose installed (usually included with Docker)
 
+  ## Install docker compose
+
+  cd to /usr/local/bin
+
+  google docker compose github -> releases -> linux x86 64 -> copy link
+
+  wget paste it
+
+  mv docker-compose file to compose -> chmod 777 compose
+
+  compose --version
+
+  check again from root directory -> cd -> compose --versioin
+
+  ## to run multiple docker file at once
+
+  docker compose up -d 
+
+
 ## Getting Started
 
 1. **Clone the Repository**
